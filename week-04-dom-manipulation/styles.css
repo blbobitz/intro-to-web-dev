@@ -1,8 +1,83 @@
 #output {
-  /* Output starts invisible */
   display: none;
+  text-align: center;
+  border: solid thin white;
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  color: #F6EB14;
 }
 
-#adjective-one-output {
+#pluralnoun-output {
   font-weight: bold;
+  color: #EF4423;
+  text-decoration: underline;
+}
+
+#pluralnoun2-output {
+  font-weight: bold;
+  color: #EF4423;
+  text-decoration: underline;
+}
+
+#verb-output {
+  font-weight: bold;
+  color: #EF4423;
+  text-decoration: underline;
+}
+
+#noun-output {
+  font-weight: bold;
+  color: #EF4423;
+  text-decoration: underline;
+}
+
+#ingverb-output {
+  font-weight: bold;
+  color: #EF4423;
+  text-decoration: underline;
+}
+
+#input1 {
+  text-align: center;
+  border: solid thin white;
+  font-family: 'VT323';
+  font-size: 22px;
+  color: #F6EB14;
+}
+
+#input2 {
+  text-align: center;
+  border: solid thin white;
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  color: #FF9526;
+}
+
+#input3 {
+  text-align: center;
+  border: solid thin white;
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  color: #F6EB14;
+}
+
+#input4 {
+  text-align: center;
+  border: solid thin white;
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  color: #FF9526;
+}
+
+#input5 {
+  text-align: center;
+  border: solid thin white;
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  color: #F6EB14;
+}
+
+body {
+  background-image: url(game.gif);
+  background-repeat: no-repeat;
 }
