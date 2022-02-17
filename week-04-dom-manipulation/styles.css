@@ -80,5 +80,5 @@
 body {
   background-image: url(game.gif);
   background-repeat: no-repeat;
-  
+  background-size: cover;
 }
