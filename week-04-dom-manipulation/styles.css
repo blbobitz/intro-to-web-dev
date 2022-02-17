@@ -79,6 +79,7 @@
 
 body {
   background-image: url(game.gif);
+  background-size: cover;
   background-repeat: no-repeat;
   background-size: cover;
 }
