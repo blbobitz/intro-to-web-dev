@@ -2,6 +2,14 @@
   display: none;
 }
 
+#question-three {
+  display: none;
+}
+
+#question-four {
+  display: none;
+}
+
 #done {
   display: none;
 }

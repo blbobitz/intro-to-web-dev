@@ -1,48 +1,82 @@
-// When this function is called, it takes the user's answer to the first
-// question and uses if statements to check whether it's correct.
+
 function submitAnswerOne() {
-  // Get answer one's input element
+
   const answerOneInput = document.getElementById('answer-one-input');
-  // Get the text from answer one's input element
+
   const answerOne = answerOneInput.value;
 
-  if(answerOne == 'cat') {
+  if(answerOne == 'Eagles') {
     alert("That's right!");
     hide('question-one');
     show('question-two');
-  } else if(answerOne == 'dog') {
-    alert('Close, but my favorite animal runs away from dogs.');
-  } else {
-    alert('Wrong! Hint: My favorite animal meows.')
+  } else if(answerOne == 'Steelers') {
+    alert("I can't believe you put this answer and you don't deserve a hint.");
+  } else if(answerOne == 'Ravens') {
+    alert("Close! Try a bit northeast.");
+  }
+  else {
+    alert("Wrong! Hint: My favorite team's mascot is a bird!")
   }
 }
 
-// When this function is called, it takes the user's answer to the second
-// question and uses if statements to check whether it's correct.
+
 function submitAnswerTwo() {
-  // Get answer two's input element
+
   const answerTwoInput = document.getElementById('answer-two-input');
-  // Get the number from answer two's input element
+
   const answerTwo = answerTwoInput.value;
 
-  if(answerTwo == 42) {
+  if(answerTwo == 33) {
     alert("That's right!");
     hide('question-two');
-    show('done');
-  } else if(answerTwo < 42) {
+    show('question-three');
+  } else if(answerTwo < 33) {
     alert('The answer is higher.');
   } else {
     alert('The answer is lower.')
   }
 }
 
-// Helper function that takes an ID and shows the element with that ID.
+function submitAnswerThree() {
+
+  const answerThreeInput = document.getElementById('answer-three-input');
+
+  const answerThree = answerThreeInput.value;
+
+  if(answerThree == 'The Ringer') {
+    alert("That's right!");
+    hide('question-three');
+    show('question-four');
+  } else if(answerThree == 'Jackass') {
+    alert('Great choice but not quite, it came out in 2005!');
+  } else {
+    alert('Wrong! Hint: The movie stars Johnny Knoxville!')
+  }
+}
+
+function submitAnswerFour() {
+
+  const answerFourInput = document.getElementById('answer-four-input');
+
+  const answerFour = answerFourInput.value;
+
+  if(answerFour == 'True') {
+    alert("That's right! you have good taste.");
+    hide('question-four');
+    show('done');
+  } else {
+    alert("How could you get this one wrong? I'm disappointed.")
+  }
+}
+
+
+
 function show(id) {
   const element = document.getElementById(id);
   element.style.display = 'block';
 }
 
-// Helper  function that takes an ID and hides the element with that ID.
+
 function hide(id) {
   const element = document.getElementById(id);
   element.style.display = 'none';
