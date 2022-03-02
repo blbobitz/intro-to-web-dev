@@ -1,44 +1,110 @@
-// Replace this speeh with your own.
-// Notice the `` backticks, which let you split your string into multiple lines.
-const speech = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-    est laborum.`;
 
-// Remove punctuation from the speech. You might have to modify this if your
-// speech contains other punctuation.
+const speech = `"Let me tell you something you already know. The world ain't all
+sunshine and rainbows. It's a very mean and nasty place and I don't care how
+tough you are it will beat you to your knees and keep you there permanently
+if you let it.
+
+You, me, or nobody is gonna hit as hard as life. But it ain't about how hard
+ya hit. It's about how hard you can get hit and keep moving forward. How much
+you can take and keep moving forward. That's how winning is done! Now if
+you know what you're worth then go out and get what you're worth.
+
+But ya gotta be willing to take the hits, and not pointing fingers saying
+you ain't where you wanna be because of him, or her, or anybody!
+Cowards do that and that ain't you! You're better than that!"`;
+
+
 const speechPunctuationRemoved = speech.replace(',', '').replace('.', '');
 
-// Use a regular expression to split the speech into individual words. You
-// shouldn't need to change this, unless you want to split on characters other
-// than whitespace.
+
 const wordsArray = speechPunctuationRemoved.split(/\s+/);
 
-// Displays words that have more than 5 characters.
-function displayLongWords() {
-  const longWordsElement = document.getElementById('long-words');
 
-  // Loop over every word in the array.
+function displayShortWords() {
+  const shortWordsElement = document.getElementById('short-words');
+
+
   for(let i = 0; i < wordsArray.length; i++) {
     const word = wordsArray[i];
-    // If the word has more than 5 characters, display it in the page.
-    if(word.length > 5) {
+
+    if(word.length < 4) {
       const wordElement = document.createElement('li');
       wordElement.innerText = word;
-      longWordsElement.appendChild(wordElement);
+      shortWordsElement.appendChild(wordElement);
     }
   }
 }
 
-// TODO: Define your own functions here!
+function displayLetterBWords(){
+  const letterWordsElement = document.getElementById('letter-words');
+
+  for(let word of wordsArray){
+    if(word.startsWith('b')){
+      const wordElement = document.createElement('li');
+      wordElement.innerText = word;
+      letterWordsElement.appendChild(wordElement);
+    }
+  }
+}
+
+function displayLongWords() {
+  const longWordsElement = document.getElementById('long-words');
+
+  for(let i = 0; i < wordsArray.length; i++) {
+    const word = wordsArray[i];
+
+    if(word.length > 6) {
+      const wordElement = document.createElement('li');
+      wordElement.innerText = word;
+      longWordsElement.appendChild(wordElement);
+
+    }
+  }
+}
+
+function displayThirdWords(){
+  const thirdWordsElement = document.getElementById('third-words');
+
+  for(let i = 2; i <= 300; i += 3){
+    const word = wordsArray[i];
+    if(word){
+      const wordElement = document.createElement('li');
+      wordElement.innerText = word;
+      thirdWordsElement.appendChild(wordElement);
+    }
+  }
+}
+
+function displayUncommonWords(){
+  let commonWords = ['the' , 'be' , 'to' , 'of' , 'and' , 'a' , 'in' , 'that' , 'have' , 'i' ,
+  'it' , 'for' , 'not' , 'on' , 'with' , 'as' , 'you' , 'do' , 'at' , 'me' , 'all' , 'are' ,
+  'if' , 'let' , 'will' , 'or' , 'is' , ];
+
+  let uncommonWordsElement = document.getElementById('uncommon-words');
+
+  for(let word of wordsArray){
+    if(!commonWords.includes(word.toLowerCase())){
+      const wordElement = document.createElement('li');
+      wordElement.innerText = word;
+      uncommonWordsElement.appendChild(wordElement);
+    }
+  }
+}
+
+
 
 function displaySpeechStats() {
   document.getElementById('speech').innerText = speech;
 
+  displayShortWords();
+
+  displayLetterBWords();
+
   displayLongWords();
 
-  // TODO: Call your functions here!
+  displayThirdWords();
+
+  displayUncommonWords();
+
+
 }
