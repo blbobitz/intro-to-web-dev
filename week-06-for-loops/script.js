@@ -47,20 +47,27 @@ function displayLetterBWords(){
   }
 }
 
-function displayLongWords() {
-  const longWordsElement = document.getElementById('long-words');
+function displayLongestWord() {
+  const longestWordElement = document.getElementById('longest-word');
 
-  for(let i = 0; i < wordsArray.length; i++) {
-    const word = wordsArray[i];
+  let longestWord = wordsArray[0];
 
-    if(word.length > 6) {
-      const wordElement = document.createElement('li');
-      wordElement.innerText = word;
-      longWordsElement.appendChild(wordElement);
+  for (let i = 1; i < wordsArray.length; i++) {
+
+    if(wordsArray[i].length > longestWord.length) {
+      longestWord = wordsArray[i];
+
+
 
     }
-  }
-}
+    }
+    const wordElement = document.createElement('li');
+     wordElement.innerText = longestWord;
+     longestWordElement.appendChild(wordElement);
+   }
+
+
+
 
 function displayThirdWords(){
   const thirdWordsElement = document.getElementById('third-words');
@@ -100,7 +107,7 @@ function displaySpeechStats() {
 
   displayLetterBWords();
 
-  displayLongWords();
+  displayLongestWord();
 
   displayThirdWords();
 
