@@ -4,7 +4,7 @@ const teamArray = [
   {team: 'Chicago Bears', wins: 783, year: 1920},
   {team: 'Green Bay Packers', wins: 782, year: 1921},
   {team: 'New York Giants', wins: 706, year: 1925},
-  {team: 'Pittsburg Steelers', wins: 652, year: 1933},
+  {team: 'Pittsburgh Steelers', wins: 652, year: 1933},
   {team: 'Washington Commanders', wins: 617, year: 1932},
   {team: 'Los Angeles Rams', wins: 599, year: 1937},
   {team: 'Philadelphia Eagles', wins: 599, year: 1933},
