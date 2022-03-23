@@ -1,3 +1,19 @@
 td {
   border: thin solid black;
 }
+
+body {
+  padding-left: 400px;
+  padding-right: 400px;
+  background-image: url(football.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 1px 1px green;
+  font-weight: bold;
+}
+
+hr {
+  border: 1px solid black;
+}
