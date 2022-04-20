@@ -1,24 +1,24 @@
 body{
-  background-color: #004C54;
+  background-color: #046A38;
   }
 
 p {
   text-align: center;
   font-family: 'Krona One';
-  color: #A5ACAF;
+  color: #FFFFFF;
   font-size: 20px;
   margin-left: 200px;
   margin-right: 200px;
 }
 
 h1 {
-  color: #000000;
+  color: #FFFFFF;
    text-align: center;
    font-family: 'Krona One'
 }
 
 h4 {
-  color: #A5ACAF;
+  color: #FFFFFF;
   text-align: center;
   font-family: 'Krona One'
 }
@@ -26,7 +26,7 @@ h4 {
 .italic{
   font-style: italic;
   font-size: 23px;
-  color: #A5ACAF;
+  color: #FFFFFF;
 }
 
 .underline {
@@ -34,6 +34,6 @@ h4 {
 }
 
 #top {
-  color: #A5ACAF;
+  color: #FFFFFF;
   font-size: 15px;
 }
