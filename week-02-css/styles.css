@@ -1,11 +1,11 @@
 body{
-  background-color: #046A38;
+  background-color: #004C54;
   }
 
 p {
   text-align: center;
   font-family: 'Krona One';
-  color: #000000;
+  color: #A5ACAF;
   font-size: 20px;
   margin-left: 200px;
   margin-right: 200px;
@@ -18,7 +18,7 @@ h1 {
 }
 
 h4 {
-  color: #000000;
+  color: #A5ACAF;
   text-align: center;
   font-family: 'Krona One'
 }
@@ -26,7 +26,7 @@ h4 {
 .italic{
   font-style: italic;
   font-size: 23px;
-  color: #000000;
+  color: #A5ACAF;
 }
 
 .underline {
