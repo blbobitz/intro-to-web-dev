@@ -9,7 +9,6 @@ const restartBtn = document.querySelector( '#restart-btn' );
 const containerWidth = gameArea.clientWidth;
 const containerHeight = gameArea.clientHeight;
 
-// make some variables accesible to functions.
 let speed;
 let score;
 let flapping;
@@ -17,7 +16,7 @@ let playing;
 let scoreUpdated;
 
 function restart() {
-    // Remove event listener to avoid multiple restarts.
+
     restartBtn.removeEventListener( 'click', restart );
     speed = 2;
     score = 0;
@@ -35,12 +34,10 @@ function restart() {
 
 
 function update() {
-    // Move poles
-    // check on SO if/why we need such a wordy method.
+
     let polesCurrentPos = parseFloat( window.getComputedStyle( poles[0] ).getPropertyValue( "right" ) );
 
-    // Update score
-    if ( polesCurrentPos > containerWidth * 0.85 ) { // or whatever bird pos is.
+    if ( polesCurrentPos > containerWidth * 0.85 ) {
     if ( !scoreUpdated ) {
         score += 1;
         scoreUpdated = true;
@@ -48,23 +45,17 @@ function update() {
     scoreSpan.textContent = score;
     }
 
-    //  Check whether the poles went putside of game area.
+
     if ( polesCurrentPos > containerWidth ) {
 
-    // Generate new poles.
     let newHeight = ( Math.random() * 150) + 1;
     var poleGap = 30;
-    // Change the poles' height
+
     pole1.style.height = 150 - poleGap + newHeight + "px";
     pole2.style.height = 150 + poleGap - newHeight + "px";
 
+    polesCurrentPos = 0;
 
-
-
-    // Move poles back to the right-hand side of game area.
-    polesCurrentPos = 0; // This is based on the "right" property.
-
-    // Update speed
     speed += 0.3;
     speedSpan.textContent = parseInt( speed );
     scoreUpdated = false;
@@ -74,7 +65,6 @@ function update() {
     pole.style.right = polesCurrentPos + speed + "px";
     } );
 
-    // Move bird
     let birdTop = parseFloat( window.getComputedStyle( bird ).getPropertyValue( "top" ) );
     if ( flapping ) {
     bird.style.top = birdTop + -2 + "px";
@@ -82,7 +72,6 @@ function update() {
     bird.style.top = birdTop + 2 + "px";
     }
 
-    // Check for collisions
     if ( collision( bird, pole1 ) || collision( bird, pole2 ) || birdTop <= 0 || birdTop > containerHeight - bird.clientHeight ) {
     gameOver();
     }
@@ -102,11 +91,10 @@ function gameLoop() {
 }
 
 function collision( gameDiv1, gameDiv2 ) {
-    // Get the top left coords of the first div
+
     let left1 = gameDiv1.getBoundingClientRect().left;
     let top1 = gameDiv1.getBoundingClientRect().top;
 
-    // Get the dimensions of the first div
     let height1 = gameDiv1.clientHeight;
     let width1 = gameDiv1.clientWidth;
 
@@ -125,19 +113,30 @@ function collision( gameDiv1, gameDiv2 ) {
 }
 
 
-// Start flapping with mousedown
 gameArea.addEventListener( "mousedown", function ( e ) {
     if ( playing ) {
     flapping = true;
     }
 } );
 
-// stop flapping with mousedown
 gameArea.addEventListener( "mouseup", function ( e ) {
     if ( playing ) {
     flapping = false;
     }
 } );
+
+gameArea.addEventListener( "touchstart", function ( e ) {
+    if ( playing ) {
+    flapping = true;
+    }
+} );
+
+gameArea.addEventListener( "touchend", function ( e ) {
+    if ( playing ) {
+    flapping = false;
+    }
+} );
+
 
 
 restart();
