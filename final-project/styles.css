@@ -1,0 +1,68 @@
+#game{
+    font-family: 'Lobster';
+    text-align: center;
+    
+}
+
+#instructions{
+    text-align: center;
+}
+
+#game-area {
+    margin: auto;
+    position: relative;
+    background: url('bg.gif');
+    background-size: cover;
+    width: 600px;
+    height: 500px;
+    border: 2px solid #006994;
+    overflow: hidden;
+}
+
+#bird {
+    position: absolute;
+    background: url('dolphin.png');
+    height: 35px;
+    width: 84px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 20%;
+    left: 15%;
+}
+
+.pole {
+    position: absolute;
+    background-image: url('coral.png');
+    height: 150px;
+    width: 70px;
+    right: 0px;
+}
+
+#pole-1 {
+    top: 0;
+    transform: scaleY(-1);
+}
+
+#pole-2 {
+    bottom: 0;
+}
+
+#game-info {
+    margin: 5px;
+    font-size: 18px;
+}
+
+#game-info p{
+    display: inline;
+    padding: 20px;
+}
+
+#restart-btn {
+    padding: 5px 10px;
+    background-color: #006994;
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
