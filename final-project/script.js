@@ -131,6 +131,12 @@ gameArea.addEventListener( "touchstart", function ( e ) {
     }
 } );
 
+gameArea.addEventListener( "touchmove", function ( e ) {
+    if ( playing ) {
+    flapping = true;
+    }
+} );
+
 gameArea.addEventListener( "touchend", function ( e ) {
     if ( playing ) {
     flapping = false;
